@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KDT 11기</title>
+</head>
+<body>
+  <!-- div태그 : block태그로써 한줄의 영역을 차지 -->
+  <div>Hello World!!</div>
+  <div>안녕하세요</div>
+  <!-- h1~6 : 제목태그 -->
+  <h1>heading 1</h1>
+  <h2>heading 2</h2>
+  <h3>heading 3</h3>
+  <h4>heading 4</h4>
+  <h5>heading 5</h5>
+  <h6>heading 6</h6>
+  <!-- p태그 : 문장을 쓰는 곳 -->
+  <p>안녕하세요. <br> 저는 최지은입니다.</p>
+  <!-- br태그 : 줄바꿈 태그 -->
+  <!-- hr태그 : 한 줄 그어줌 -->
+  <hr>
+  <!-- ul태그 : 순서 없는 목록
+  ul태그 속성(마커모양) : disc, circle, square, none -->
+  <!-- li태그 : ul이나 ol태그 안에 list를 작성 -->
+  <ul type="square">
+    <li>사과</li>
+    <li>바나나</li>
+    <li>파인애플</li>
+  </ul>
+  <!-- ol태그 : 순서 있는 목록
+  ol태그 속성(순번 모양) : 1, A, a, I, i
+  start : 시작 번호
+  reversed : 역순 -->
+  <ol type="i" start="10" reversed>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ol>
+  <ul type="square">
+    <li>
+      <ol>
+        <li><b><em>일</em></b></li>
+        <li><strong>이</strong></li>
+        <li><i>삼</i></li>
+      </ol>
+    </li>
+    <li>
+      <ol>
+        <li><em>일</em></li>
+        <li><del>이</del></li>
+        <li><u>삼</u></li>
+      </ol>
+    </li>
+  </ul>
+  <!-- img태그 : 이미지를 등록 -->
+  <img src="https://ssl.pstatic.net/melona/libs/1474/1474337/22c59f513bc0e8812ab0_20231226163044058.jpg" alt="광고 이미지" />
+  <!-- a태그 : 페이지를 이동 -->
+  <div>
+    <a href="exam1.html" target="_blank">이동</a>
+  </div>
+  <div>
+    <span style="color: red;">안녕하세요.</span><span>반갑습니다.</span>
+  </div>
+  <hr />
+  <!-- form태그 : input태그를 담는 역할, 서버로 input의 데이터(value)를 전송시키는 역할 -->
+  <!-- placeholder속성 : 사용자에게 안내해주는 역할 -->
+  <form>
+    <input type="button" value="전송" />
+    <button type="submit">버튼</button><br />
+    <input type="text" placeholder="이름" value="hi" readonly /><br />
+    <input type="password" placeholder="비밀번호" /><br />
+    <input type="checkbox" name="food" value="pizza" />피자<br />
+    <input type="checkbox" name="food" value="chicken" checked />치킨<br />
+    <input type="radio" name="hobby" value="camping" />캠핑<br />
+    <input type="radio" name="hobby" value="hikinh" disabled />등산<br />
+    <input type="radio" name="hobby1" value="swimming" />수영<br />
+    <input type="date" /><br />
+    <input type="time" /><br />
+    <input type="datetime-local" /><br />
+    <select>
+      <optgroup label="ASIA">
+        <option>대한민국</option>
+        <option>일본</option>
+        <option>중국</option>
+        <option disabled>대만</option>
+        <option>베트남</option>
+      </optgroup>
+      <optgroup label="AMERICA">
+        <option>미국</option>
+        <option>캐나다</option>
+      </optgroup>
+    </select>
+  </form>
+</body>
+</html>
