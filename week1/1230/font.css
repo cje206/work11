@@ -1,0 +1,17 @@
+/* 웹폰트 적용: @import 방식은 css에, link 방식은 html에 적용 */
+@font-face {
+  font-family: 'JalnanGothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  font-family: 'JalnanGothic', sans-serif;
+}
+.content1 {
+  color: red;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 40px;
+}
