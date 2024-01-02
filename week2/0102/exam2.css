@@ -1,0 +1,11 @@
+.content1{
+  border-width: 5px 10px 15px 20px;
+  border-style: solid dotted dashed double;
+  border-color: blue red green yellow;
+}
+.content2{
+  border-top: 10px solid black;
+  border-right: 20px double orange;
+  border-bottom: 2px dotted skyblue;
+  border-left: 40px dashed greenyellow;
+}

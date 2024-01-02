@@ -1,0 +1,5 @@
+.container{position: relative; width: 500px; height: 500px; background-color: aliceblue;}
+.container > div{width: 100px; height: 100px;}
+.item1{position: relative; top: 30px; left: 50px; background-color: aqua;}
+.item2{position: absolute; bottom: 100px; right: 30px; background-color: bisque;}
+.item3{position: fixed; right: 100px; top: 100px; background-color: blueviolet;}
