@@ -1,0 +1,37 @@
+.main {
+  background-color: blue;
+  width:100%;
+  height: 500px;
+  display: flex;
+  /* flex-direction: row-reverse;
+  flex-wrap: wrap; */
+  justify-content: space-between;
+  align-items: flex-end;
+  /* flex-direction : x축과 y축의 시작축을 지정 */
+  /* flex-wrap : 줄바꿈을 설정 */
+  /* justify-content : 축의 정렬을 설정(flex-direction과 헷갈리지 말것!) */
+  /* align-items : 위아래 축의 정렬을 설정(한줄일때) */
+  /* align-content : 위 아래 축의 정렬을 설정(여러줄일때) */
+}
+.box{
+  width: 100px;
+  height: 100px;
+}
+.box1 {
+  background-color: red;
+}
+.box2 {
+  background-color: orange;
+}
+.box3 {
+  background-color: yellow;
+}
+.box4 {
+  background-color: green;
+}
+.box5 {
+  background-color: navy;
+}
+.box6 {
+  background-color: purple;
+}

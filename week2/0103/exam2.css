@@ -1,0 +1,5 @@
+.container{position: relative; width: 500px; height: 500px;}
+.container > div{position: absolute; width: 100px; height: 100px;}
+.item1{z-index: 3; background: blue;}
+.item2{top: 30px; left: 30px; z-index: 2; background: red;}
+.item3{top: 60px; left: 60px; z-index: 1; background: green;}

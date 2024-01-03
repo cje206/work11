@@ -1,0 +1,16 @@
+.container{
+  display: flex; 
+  /* 가로-시작점을 기준으로 쌓이도록 설정 */
+  flex-direction: row;
+  /* 가로-끝점을 기준으로 쌓이도록 설정 */
+  flex-direction: row-reverse; 
+  /* 세로 방향으로 아에템이 쌓이도록 설정 */
+  flex-direction: column;
+  width: 500px; height: 500px; 
+  background-color: aliceblue;
+}
+.container > div{
+  width: 100px; 
+  height: 100px; 
+  background-color: antiquewhite;
+}
