@@ -1,0 +1,5 @@
+.box{position: relative; animation: text 3s ease-in-out;}
+@keyframes text {
+  0%{left: 100vw; width: 300vw;}
+  100%{left: 0vw; width: 100vw;}
+}

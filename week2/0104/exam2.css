@@ -1,0 +1,2 @@
+.box{width: 100px; height: 100px; background: black; color: white; overflow-y: auto; transition: all 1s ease-in 0.5s;}
+.box:hover{width: 300px; height: 300px;}
