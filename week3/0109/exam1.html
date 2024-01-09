@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습1. 간단 계산기 만들기</title>
+  </head>
+  <body>
+    <label for="value1">값1:</label>
+    <input type="number" name="value1" id="value1" /><br />
+    <label for="value2">값2:</label>
+    <input type="number" name="value2" id="value2" /><br />
+    <label for="op">연산자:</label>
+    <input type="text" name="op" id="op" /><br />
+    <label for="result">결과:</label>
+    <input type="text" name="result" id="result" /><br /><br />
+    <button id="cal" onclick="calculate()">계산하기</button>
+    <button id="reset" onclick="reset()">초기화</button>
+
+    <script src="exam1.js"></script>
+  </body>
+</html>
