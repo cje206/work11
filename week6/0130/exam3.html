@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>실습3</title>
+    </head>
+    <body>
+        <script>
+            // 실습3. Promise로 배경색 변경하기
+            function changeBgColor(newColor, delay) {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve(
+                            (document.body.style.backgroundColor = newColor)
+                        );
+                    }, delay);
+                });
+            }
+            // async/await 사용하는 방법
+            async function exec() {
+                await changeBgColor('red', 1000);
+                await changeBgColor('orange', 2000);
+                await changeBgColor('yellow', 1000);
+                await changeBgColor('green', 2000);
+                await changeBgColor('blue', 1500);
+            }
+            exec();
+
+            // then 사용하는 방법
+            // exec();
+            // changeBgColor('red', 1000)
+            //     .then(() => {
+            //         return changeBgColor('orange', 2000);
+            //     })
+            //     .then(() => {
+            //         return changeBgColor('yellow', 3000);
+            //     })
+            //     .then(() => {
+            //         return changeBgColor('green', 1000);
+            //     })
+            //     .then(() => {
+            //         return changeBgColor('blue', 2000);
+            //     });
+        </script>
+    </body>
+</html>
