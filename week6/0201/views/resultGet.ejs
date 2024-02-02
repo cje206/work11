@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>실습. GET으로 정보 받기</title>
+    </head>
+    <body>
+        <h2>회원 가입이 완료되었습니다!</h2>
+        <h3>회원 정보</h3>
+        <div>이름 : <%= userInfo.name %></div>
+        <div>성별 : <%- userInfo.gender === 'male' ? '남자' : '여자' %></div>
+        <div>생년월일 : <%= userInfo.birthYear %>-<%= userInfo.birthMonth %>-<%= userInfo.birthDate %></div>
+        <div>취미 : <%- userInfo.hobby ? userInfo.hobby : '없음' %></div>
+    </body>
+</html>
