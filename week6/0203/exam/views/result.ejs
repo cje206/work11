@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                background: #333;
+            }
+            .wrap {
+                border-radius: 20px;
+                background-color: #fff;
+                width: fit-content;
+                padding: 50px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <img src="<%= image %>" alt="프로필사진" />
+            <h3><%= username %>님 환영합니다!</h3>
+            <br />
+            <div>비밀번호: <%= userpw %></div>
+            <div>이름: <%= username %></div>
+            <div>나이: <%= userage %></div>
+        </div>
+    </body>
+</html>
