@@ -1,4 +1,8 @@
-const id = 'kdt11';
-const pw = '1234';
+const users = [
+    {
+        userid: 'kdt11',
+        userpw: '1234',
+    },
+];
 
-module.exports = { id, pw };
+module.exports = users;
