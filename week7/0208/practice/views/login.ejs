@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>로그인</title>
+    </head>
+    <body>
+        <form name="register-form">
+            <input type="text" id="userid" placeholder="아이디" /><br />
+            <input type="password" id="pw" placeholder="비밀번호" /><br />
+            <button type="button" onclick="loginFunc()">로그인</button>
+        </form>
+    </body>
+    <script>
+        async function loginFunc() {
+            const form = document.forms['register-form'];
+            const res = await axios({
+                method: 'GET',
+                url: '/login',
+            });
+            const user = res.data.user;
+            for (i = 0; i < user.length; i++) {
+                if (user[i].userid === form.userid.value) {
+                    if (user[i].pw === form.pw.value) {
+                        confirm('로그인 성공!');
+                        return;
+                    } else {
+                        confirm('비밀번호를 다시 확인해주세요.');
+                        return;
+                    }
+                }
+            }
+            confirm('존재하지 않는 아이디입니다.');
+        }
+    </script>
+</html>

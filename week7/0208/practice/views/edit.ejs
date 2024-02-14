@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form name="register-form">
+            <input type="text" id="userid" placeholder="아이디" /><br />
+            <input type="text" id="name" placeholder="이름" /><br />
+            <input type="password" id="pw" placeholder="비밀번호" /><br />
+            <button type="button" onclick="editFunc()">회원 정보 수정</button>
+        </form>
+        <script>
+            async function editFunc() {
+                const form = document.forms['register-form'];
+                const res = await axios({
+                    method: 'PATCH',
+                    url: '/edit',
+                    data: {
+                        userid: form.userid.value,
+                        name: form.name.value,
+                        pw: form.pw.value,
+                    },
+                });
+                if (res.data.result) {
+                    confirm('회원 정보가 수정되었습니다.');
+                }
+            }
+        </script>
+    </body>
+</html>

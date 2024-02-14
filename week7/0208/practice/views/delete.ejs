@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>회원탈퇴</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <form name="register-form">
+            <input type="text" id="userid" placeholder="아이디" /><br />
+            <input type="text" id="name" placeholder="이름" /><br />
+            <input type="password" id="pw" placeholder="비밀번호" /><br />
+            <button type="button" onclick="delFunc()">회원 탈퇴</button>
+        </form>
+        <script>
+            async function delFunc() {
+                const form = document.forms['register-form'];
+                if (!confirm(`${form.userid.value} 회원 정보를 삭제하시겠습니까?`)) {
+                    return;
+                }
+                const res = await axios({
+                    method: 'DELETE',
+                    url: '/del',
+                    data: {
+                        userid: form.userid.value,
+                    },
+                });
+            }
+        </script>
+    </body>
+</html>
