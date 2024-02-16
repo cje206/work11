@@ -10,9 +10,11 @@ router.get('/:id', controller.post);
 router.post('/write', controller.write);
 // PATCH /update 게시판 글 하나 수정
 router.patch('/update', controller.update);
-// DELETE /update 게시판 글 하나 수정
+// DELETE /delete 게시판 글 하나 삭제
 router.delete('/delete', controller.delete);
 // POST /comment 댓글 생성
 router.post('/comment', controller.comment);
+// DELETE /delete 게시판 글 하나 삭제
+router.delete('/deleteComment', controller.deleteComment);
 
 module.exports = router;

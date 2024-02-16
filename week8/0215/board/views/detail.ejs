@@ -13,9 +13,13 @@
             <input type="text" id="title" placeholder="제목" /><br />
             <textarea id="content" cols="30" rows="10"></textarea>
             <input type="hidden" id="index" /><br />
-            <ul></ul>
             <button type="button" onclick="updateFunc()">수정</button>
             <button type="button" onclick="deleteFunc()">삭제</button>
+            <br /><br />
+            <label for="comment">댓글</label><br />
+            <textarea id="comment" cols="30" rows="5"></textarea><br />
+            <button type="button" onclick="newComment()">댓글 등록</button>
+            <ul></ul>
         </form>
         <script>
             const [_, url] = document.location.href.split('post/');
@@ -33,11 +37,11 @@
                 document.querySelector('#index').value = id;
                 for (let i = 0; i < comments.length; i++) {
                     const html = `
-						<li>
-							${comments[i].content}
-							<button type="button" onclick="commentFunc(${comments[i].id})">삭제</button>
-						</li>
-					`;
+                     			<li>
+                     				${comments[i].content}
+                     				<button type="button" onclick="commentFunc(${comments[i].id})">삭제</button>
+                     			</li>
+                     		`;
                     ul.insertAdjacentHTML('beforeend', html);
                 }
             })();
@@ -72,6 +76,38 @@
                 });
                 if (res.data.result) {
                     document.location.href = '/post';
+                }
+            }
+
+            async function newComment() {
+                const res = await axios({
+                    method: 'POST',
+                    url: '/api/post/comment',
+                    data: {
+                        id: document.querySelector('#index').value,
+                        content: document.querySelector('#comment').value,
+                    },
+                });
+                if (res.data.result) {
+                    alert('댓글이 작성되었습니다.');
+                    document.location.reload();
+                }
+            }
+
+            async function commentFunc(i) {
+                if (!confirm('댓글을 삭제하시겠습니까?')) {
+                    return;
+                }
+                const res = await axios({
+                    method: 'DELETE',
+                    url: '/api/post/deleteComment',
+                    data: {
+                        id: i,
+                    },
+                });
+                if (res.data.result) {
+                    alert('댓글이 삭제되었습니다.');
+                    document.location.reload();
                 }
             }
         </script>

@@ -43,8 +43,9 @@ exports.find = async (req, res) => {
 };
 // 정보수정
 exports.update = async (req, res) => {
-    const { id, pw } = req.body;
+    const { id, pw, username, age, email } = req.body;
     const result = await Member.update({ password: pw }, { where: { id } });
+    const result2 = await Profile.update({ username, age, email }, { where: { memberId: id } });
     console.log('update', result);
     res.json({ result: true });
 };

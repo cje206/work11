@@ -41,6 +41,7 @@ exports.update = async (req, res) => {
 
 // 하나 삭제
 exports.delete = async (req, res) => {
+    const result2 = await Comment.destroy({ where: { postId: req.body.id } });
     const result = await Post.destroy({ where: { id: req.body.id } });
     console.log('delete', result);
     res.json({ result: true });
@@ -51,5 +52,12 @@ exports.comment = async (req, res) => {
     const { id, content } = req.body;
     const result = await Comment.create({ content, postId: id });
     console.log('comment', result);
+    res.json({ result: true });
+};
+
+// 댓글 삭제
+exports.deleteComment = async (req, res) => {
+    const result = await Comment.destroy({ where: { id: req.body.id } });
+    console.log('delete', result);
     res.json({ result: true });
 };
