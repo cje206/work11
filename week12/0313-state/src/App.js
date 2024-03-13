@@ -3,7 +3,7 @@ import './App.css';
 import Counter from './Counter';
 import SayFunction from './SayFunction';
 import Practice3 from './Practice3';
-import State1 from './State1';
+// import State1 from './State1';
 import State2 from './State2';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <State2 />
 
       <hr />
-      <State1 />
+      {/* <State1 /> */}
 
       <hr />
       <Practice3 valid={valid} />

@@ -11,8 +11,14 @@ const SayFunction = () => {
     setMessage('안녕하세요~');
   };
 
-  const onClickLeave = () => {
+  const onClickLeave = (e) => {
+    console.log(e.target);
     setMessage('안녕히가세요~');
+  };
+
+  const alertMsg = (e, msg) => {
+    console.log(e.target);
+    alert(`${msg} 입니다!`);
   };
 
   return (
@@ -26,6 +32,9 @@ const SayFunction = () => {
       <h1>{message}</h1>
       <button onClick={onClickEnter}>입장</button>
       <button onClick={onClickLeave}>퇴장</button>
+
+      {/* 함수에 인자 보내기: 인자가 있는 함수는 익명함수로 감싸서 처리 */}
+      <button onClick={(e) => alertMsg(e, 'msg')}>출력</button>
     </div>
   );
 };
