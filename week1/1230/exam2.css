@@ -1,0 +1,5 @@
+.wrap{width: auto; height: 200px; background: orange;}
+.wrap > div{display: inline-block; width: 200px; height: 100px; margin-right: 30px;}
+.html{background: skyblue;}
+.css{background: green;}
+.js{background: red;}

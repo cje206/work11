@@ -1,0 +1,27 @@
+.container{
+  display: flex;
+  width: 500px;
+  height: 500px;
+  background-color: aliceblue;
+  /* 한 줄 */
+  /* flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center; */
+
+  /* 두 줄 */
+  flex-wrap: wrap;
+  /* 하나로 뭉쳐서 가로, 세로 수직 정렬하기 */
+  justify-content: center;
+  /* align-content: center; */
+  /* 각각의 flex 줄에 가로,세로 수직 정렬하기 */
+  align-items: center;
+}
+.container > div{width: 100px; height: 100px;}
+.item1{background-color: red;}
+.item2{background-color: orange;}
+.item3{background-color: yellow;}
+.item4{background-color: yellowgreen;}
+.item5{background-color: green;}
+.item6{background-color: blue;}
+.item7{background-color: navy;}
+.item8{background-color: blueviolet;}

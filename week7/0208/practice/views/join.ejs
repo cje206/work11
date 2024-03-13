@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>회원가입</title>
+    </head>
+    <body>
+        <form name="register-form">
+            <input type="text" id="userid" placeholder="아이디" /><br />
+            <input type="text" id="name" placeholder="이름" /><br />
+            <input type="password" id="pw" placeholder="비밀번호" /><br />
+            <button type="button" onclick="joinFunc()">회원가입</button>
+        </form>
+        <script>
+            async function joinFunc() {
+                const form = document.forms['register-form'];
+                const res1 = await axios({
+                    method: 'POST',
+                    url: '/user',
+                    data: {
+                        userid: form.userid.value,
+                        name: form.name.value,
+                        pw: form.pw.value,
+                    },
+                });
+                const result = res1.data.result;
+                if (res1.data.result) {
+                    confirm('이미 존재하는 아이디입니다.');
+                } else {
+                    const res = await axios({
+                        method: 'POST',
+                        url: '/join',
+                        data: {
+                            userid: form.userid.value,
+                            name: form.name.value,
+                            pw: form.pw.value,
+                        },
+                    });
+                    confirm(`${form.name.value}님 회원 가입 완료되었습니다.`);
+                }
+            }
+        </script>
+    </body>
+</html>

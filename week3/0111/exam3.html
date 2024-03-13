@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습3. 스케줄</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+      .calendar {
+        position: relative;
+        left: 300px;
+        width: 420px;
+      }
+      h2 {
+        text-align: center;
+        color: green;
+      }
+      td {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        vertical-align: top;
+      }
+      td:first-child,
+      th:first-child {
+        color: red;
+      }
+      td:last-child,
+      th:last-child {
+        color: blue;
+      }
+      span {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="date">날짜 :</label>
+    <input type="text" id="date" /><br />
+    <label for="content">내용 :</label>
+    <input type="text" id="content" /><br />
+    <button type="button" class="write" onclick="writeSchedule()">작성</button>
+    <div class="calendar">
+      <h2>2024년 1월</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>日</th>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+            <th>土</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td><span class="calDate">1</span></td>
+            <td><span class="calDate">2</span></td>
+            <td><span class="calDate">3</span></td>
+            <td><span class="calDate">4</span></td>
+            <td><span class="calDate">5</span></td>
+            <td><span class="calDate">6</span></td>
+          </tr>
+          <tr>
+            <td><span class="calDate">7</span></td>
+            <td><span class="calDate">8</span></td>
+            <td><span class="calDate">9</span></td>
+            <td><span class="calDate">10</span></td>
+            <td><span class="calDate">11</span></td>
+            <td><span class="calDate">12</span></td>
+            <td><span class="calDate">13</span></td>
+          </tr>
+          <tr>
+            <td><span class="calDate">14</span></td>
+            <td><span class="calDate">15</span></td>
+            <td><span class="calDate">16</span></td>
+            <td><span class="calDate">17</span></td>
+            <td><span class="calDate">18</span></td>
+            <td><span class="calDate">19</span></td>
+            <td><span class="calDate">20</span></td>
+          </tr>
+          <tr>
+            <td><span class="calDate">21</span></td>
+            <td><span class="calDate">22</span></td>
+            <td><span class="calDate">23</span></td>
+            <td><span class="calDate">24</span></td>
+            <td><span class="calDate">25</span></td>
+            <td><span class="calDate">26</span></td>
+            <td><span class="calDate">27</span></td>
+          </tr>
+          <tr>
+            <td><span class="calDate">28</span></td>
+            <td><span class="calDate">29</span></td>
+            <td><span class="calDate">30</span></td>
+            <td><span class="calDate">31</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="exam3.js"></script>
+  </body>
+</html>

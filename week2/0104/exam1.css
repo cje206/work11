@@ -1,0 +1,4 @@
+img{position: relative; width: 300px; height: 200px;}
+.img1 img{transform: translate(0, 150px) skewY(20deg); z-index: 3;}
+.img2 img{transform: translate(200px, -100px) skewY(20deg); z-index: 2;}
+.img3 img{transform: translate(400px, -350px) skewY(20deg); z-index: 1;}

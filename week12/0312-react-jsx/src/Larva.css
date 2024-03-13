@@ -1,0 +1,62 @@
+.main {
+  position: relative;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+}
+.circle1 {
+  background-color: rgb(31, 138, 199);
+}
+.circle2 {
+  background-color: rgb(70, 67, 255);
+  top: 50px;
+  left: 73px;
+}
+.circle3 {
+  background-color: rgb(69, 27, 255);
+  top: 89px;
+  left: 125px;
+}
+.circle4 {
+  background-color: rgb(128, 125, 255);
+  top: 103px;
+  left: 192px;
+}
+.circle5 {
+  background-color: rgb(67, 155, 255);
+  top: 110px;
+  left: 270px;
+  z-index: 10;
+}
+.eye-white {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  left: 15px;
+  top: 18px;
+}
+.eye-black {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  position: relative;
+  left: 0px;
+  top: 7px;
+}
+.grass {
+  position: relative;
+  top: 115px;
+  z-index: 5;
+}
+
+.grass-bg {
+  width: 400px;
+  height: 100px;
+  background-image: url('./grass.png');
+}

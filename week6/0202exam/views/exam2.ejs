@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>실습2. axios post 로그인</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <style>
+            .fail {
+                color: red;
+            }
+            .success {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="register-form">
+            <input type="text" name="id" id="id" placeholder="ID" required /><br />
+            <input type="password" name="pw" id="pw" placeholder="PASSWORD" required /><br />
+            <button type="button" onclick="login()">로그인</button>
+            <div class="result"></div>
+        </form>
+        <script>
+            const resultBox = document.querySelector('.result');
+            function login() {
+                const form = document.forms['register-form'];
+                const data = {
+                    inputId: form.id.value,
+                    inputPw: form.pw.value,
+                };
+                axios({
+                    method: 'POST',
+                    url: '/login',
+                    data,
+                }).then((res) => {
+                    const { inputId, inputPw, loginId, loginPw } = res.data;
+                    console.log(inputId, inputPw, loginId, loginPw);
+                    if (inputId === loginId && inputPw === loginPw) {
+                        resultBox.className = 'result success';
+                        resultBox.textContent = '로그인 성공!';
+                    } else {
+                        resultBox.className = 'result fail';
+                        if (inputId != loginId) {
+                            resultBox.textContent = '존재하지 않는 아이디 입니다.';
+                        } else {
+                            resultBox.textContent = '비밀번호를 다시 확인해주세요.';
+                        }
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+*{margin: 0; padding: 0; text-decoration: none; list-style: none;}
+
+header{width: 100%; height: 80px; margin-bottom: 100px; background-color: grey;}
+
+.h1{display: flex; justify-content: space-between; align-items: center;}
+.h1 .logo{padding: 0 10px;}
+.h1 .menu ul{display: flex;}
+.h1 .menu ul li{padding: 0 10px;}
+
+.h2{display: flex; justify-content: space-between; align-items: center;}
+.h2 > div{padding: 0 10px;}
+
+.h3{display: flex; justify-content: space-between; align-items: center;}
+.h3 .logo{padding: 0 10px;}
+.h3 .menu ul{display: flex;}
+.h3 .menu ul li{padding: 0 10px;}
+.h3 .login{padding: 0 10px;}
+
+.h4{display: flex; justify-content: space-between; align-items: center;}
+.h4 .h-left{display: flex;}
+.h4 .logo{padding: 0 10px;}
+.h4 .menu ul{display: flex;}
+.h4 .menu ul li{padding: 0 10px;}
+.h4 .h-right{display: flex;}
+.h4 .h-right > div{padding: 0 10px;}

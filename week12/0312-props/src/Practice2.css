@@ -1,0 +1,23 @@
+.book {
+  width: fit-content;
+  background-color: beige;
+  padding: 5px 50px 30px;
+}
+.category {
+  color: orange;
+  text-align: center;
+}
+.bookImg {
+  width: 200px;
+}
+.title {
+  text-align: center;
+}
+.author,
+.price,
+.type {
+  text-align: left;
+  line-height: 1.5;
+  font-weight: bold;
+  font-size: 24px;
+}

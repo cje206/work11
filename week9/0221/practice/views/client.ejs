@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Socket 연습</title>
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <button type="button" onclick="hello()">hello</button>
+        <button type="button" onclick="study()">study</button>
+        <button type="button" onclick="bye()">bye</button>
+        <br /><br />
+        <p id="form-data"></p>
+        <script>
+            const socket = io();
+            const p = document.querySelector('#form-data');
+            // socket.emit('open_message', 'Server Socket Connected', (res) => {});
+            // socket.on('backend_message', (arg) => {
+            //     p.textContent = `${arg.client}: ${arg.msg}`;
+            // });
+            function hello() {
+                socket.emit('hello', { name: 'client', msg: 'hello' });
+            }
+            socket.on('rtHello', (arg) => {
+                p.textContent = `${arg.name} : ${arg.message}`;
+            });
+            function study() {
+                socket.emit('study', { name: 'client', msg: 'study' });
+            }
+            socket.on('rtStudy', (arg) => {
+                p.textContent = `${arg.name} : ${arg.message}`;
+            });
+            function bye() {
+                socket.emit('bye', { name: 'client', msg: 'bye' });
+            }
+            socket.on('rtBye', (arg) => {
+                p.textContent = `${arg.name} : ${arg.message}`;
+            });
+            // function btnFunc(btn) {
+            //     let msg = '';
+            //     if (btn === 'hello') {
+            //         msg = '안녕하세요.';
+            //     } else if (btn === 'study') {
+            //         msg = '공부합시다!';
+            //     } else if (btn === 'bye') {
+            //         msg = '잘가~';
+            //     }
+            //     socket.emit('form_message', { client: btn, msg });
+            // }
+            // form.querySelector('#hello').addEventListener('click', (e) => {
+            //     e.preventDefault();
+            //     socket.emit('form_message', { client: 'hello', msg: '안녕하세요.' });
+            // });
+            // form.querySelector('#study').addEventListener('click', (e) => {
+            //     e.preventDefault();
+            //     socket.emit('form_message', { client: 'study', msg: '공부합시다!' });
+            // });
+            // form.querySelector('#bye').addEventListener('click', (e) => {
+            //     e.preventDefault();
+            //     socket.emit('form_message', { client: 'bye', msg: '잘가~' });
+            // });
+        </script>
+    </body>
+</html>

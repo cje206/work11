@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>채팅방</title>
+        <script src="socket.io/socket.io.js"></script>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            body {
+                padding: 30px;
+            }
+            .hide {
+                display: none;
+            }
+            h1 {
+                width: 300px;
+                text-align: center;
+            }
+            #room {
+                display: flex;
+                width: 300px;
+            }
+            #main input {
+                display: block;
+                line-height: 40px;
+                padding: 0 0 0 10px;
+                margin: 0;
+            }
+            #roomName {
+                width: 100px;
+            }
+            #userName {
+                width: 120px;
+            }
+            #main button {
+                line-height: 40px;
+                padding: 0 10px;
+                margin: 0;
+            }
+            #message {
+                background-color: #82acdb;
+                height: 500px;
+                width: 300px;
+                overflow-y: auto;
+            }
+            .enter {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .enter p {
+                margin: 0;
+            }
+            .me {
+                display: flex;
+                justify-content: flex-end;
+                margin: 10px 0;
+            }
+            .me p {
+                display: inline-block;
+                background-color: #f7e62f;
+                border-radius: 6px;
+                padding: 6px;
+                margin: 0 10px;
+                line-height: 1.5;
+            }
+            .you {
+                margin: 10px 0;
+            }
+            .you p {
+                display: inline-block;
+                background-color: #fff;
+                border-radius: 6px;
+                line-height: 1.5;
+                padding: 6px;
+                margin: 0 10px;
+            }
+            #chat {
+                width: 300px;
+                border: 1px solid #eee;
+                box-sizing: border-box;
+            }
+            #chatMessage {
+                line-height: 40px;
+                padding-left: 10px;
+                border: none;
+                width: 223px;
+            }
+            #chat button {
+                line-height: 40px;
+                border: none;
+                background-color: #ffe888;
+                width: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>채팅방</h1>
+        <div id="main">
+            <form id="room">
+                <input type="text" id="roomName" placeholder="채팅방 만들기" />
+                <input type="text" id="userName" placeholder="사용자 이름 입력" />
+                <button>생성</button>
+            </form>
+        </div>
+        <div id="body" class="hide">
+            <div id="message">
+                <div id="notice"></div>
+            </div>
+            <form id="chat">
+                <input type="text" id="chatMessage" placeholder="메세지 입력" />
+                <button>입력</button>
+            </form>
+        </div>
+        <script>
+            const socket = io();
+            const roomForm = document.querySelector('#room');
+            const chatForm = document.querySelector('#chat');
+            const notice = document.querySelector('#notice');
+            const message = document.querySelector('#message');
+
+            let myName = '';
+
+            // 소켓 이벤트
+            socket.on('notice', (res) => {
+                const div = document.createElement('div');
+                const p = document.createElement('p');
+                p.textContent = res;
+                div.appendChild(p);
+                div.className = 'enter';
+                notice.appendChild(div);
+            });
+            socket.on('newMessage', (res) => {
+                console.log(res);
+                const div = document.createElement('div');
+                const p = document.createElement('p');
+                p.textContent = `${res.user} : ${res.message}`;
+                div.appendChild(p);
+                if (myName === res.user) {
+                    div.className = 'me';
+                } else {
+                    div.className = 'you';
+                }
+                message.appendChild(div);
+            });
+
+            // 폼이벤트
+            roomForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const roomName = roomForm.querySelector('#roomName').value;
+                const userName = roomForm.querySelector('#userName').value;
+
+                if (roomName === '' || userName === '') {
+                    alert('방 이름과 닉네임을 적어주세요');
+                    return;
+                }
+                socket.emit('create', { roomName, userName }, () => {
+                    // 전역 변수에 입력한 닉네임을 저장
+                    myName = userName;
+                });
+                document.querySelector('#main').className = 'hide';
+                document.querySelector('#body').className = '';
+            });
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const message = chatForm.querySelector('#chatMessage');
+                socket.emit('sendMessage', { message: message.value, user: myName });
+                message.value = '';
+            });
+        </script>
+    </body>
+</html>

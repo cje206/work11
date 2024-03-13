@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습2. 방명록 만들기</title>
+  </head>
+  <body>
+    <p>방명록입니다.</p>
+    <label for="writer">작성자</label>
+    <input type="text" name="writer" id="writer" /><br />
+    <label for="content">내용</label>
+    <input type="text" name="content" id="content" style="width: 500px" /><br /><br />
+    <button type="button" onclick="send()">작성</button><br /><br />
+    <table border="1" cellspacing="1" cellpadding="10">
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>작성자</th>
+          <th>내용</th>
+          <th>작성일</th>
+        </tr>
+      </thead>
+      <tbody class="tableText"></tbody>
+    </table>
+    <script src="exam2.js"></script>
+  </body>
+</html>
