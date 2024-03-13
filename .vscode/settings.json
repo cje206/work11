@@ -1,10 +1,6 @@
 {
-<<<<<<< HEAD
   "emmet.includeLanguages": {
     "Javascript": "javascriptreact"
-  }
-}
-=======
+  },
   "liveServer.settings.port": 5501
 }
->>>>>>> 860fb4d55c81a696e63c733a8b100abadefd0ea3
