@@ -1,0 +1,27 @@
+.name {
+  background: #6c9aff;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  line-height: 2;
+}
+h1 {
+  text-align: center;
+}
+.post {
+  background: #f2f6fe;
+  width: 500px;
+  margin: 0 auto 40px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.title {
+  color: #6c9aff;
+}
+.title span {
+  color: #999;
+}
+.content {
+  font-weight: bold;
+}
