@@ -1,0 +1,36 @@
+$color-blue: #6c9aff;
+$color-grey: #999;
+$color-sky: #f2f6fe;
+$color-white: #fff;
+
+.wrap {
+  header {
+    background: $color-blue;
+    text-align: center;
+    color: $color-white;
+    font-size: 24px;
+    line-height: 2;
+    margin-bottom: 30px;
+  }
+  .postBox {
+    background: $color-sky;
+    width: 500px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    .postTitle {
+      margin-bottom: 10px;
+      .postNumber {
+        color: $color-blue;
+      }
+      .postTitleText {
+        color: $color-grey;
+      }
+    }
+    .postContent {
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+}

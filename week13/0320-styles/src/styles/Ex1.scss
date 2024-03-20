@@ -1,0 +1,46 @@
+@mixin size($size) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+@mixin position($top, $left, $bgColor) {
+  top: $top;
+  left: $left;
+  background-color: $bgColor;
+}
+
+.larva {
+  position: relative;
+  .body {
+    @include size(100px);
+    &.body1 {
+      @include position(100px, 100px, rgb(0, 0, 166));
+      .eye-white {
+        @include size(30px);
+        @include position(20px, 25px, white);
+      }
+      .eye-black {
+        @include size(15px);
+        @include position(5px, 0, black);
+      }
+    }
+    &.body2 {
+      @include position(150px, 160px, rgb(36, 61, 206));
+    }
+    &.body3 {
+      @include position(190px, 200px, rgb(52, 118, 231));
+    }
+    &.body4 {
+      @include position(240px, 220px, rgb(47, 146, 233));
+    }
+    &.body5 {
+      @include position(280px, 280px, rgb(140, 191, 253));
+      z-index: 10;
+    }
+  }
+  .grass {
+    position: absolute;
+    @include position(260px, 0, transparent);
+  }
+}

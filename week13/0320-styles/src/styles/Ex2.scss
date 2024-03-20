@@ -1,0 +1,42 @@
+@mixin feature($name, $index, $bgColor) {
+  @keyframes #{$name} {
+    0%,
+    100% {
+      transform: translate(0);
+    }
+    25% {
+      transform: translateX($index * 10px);
+    }
+    50% {
+      transform: translate($index * 10px, $index * 10px);
+    }
+    75% {
+      transform: translateY($index * 10px);
+    }
+  }
+  top: ($index - 1) * 10px;
+  background-color: $bgColor;
+  animation: $name 2s ease-in-out infinite;
+}
+
+.container {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  .circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 0;
+    border-radius: 50%;
+    &.circle1 {
+      @include feature(move1, 1, pink);
+    }
+    &.circle2 {
+      @include feature(move2, 2, yellow);
+    }
+    &.circle3 {
+      @include feature(move3, 3, green);
+    }
+  }
+}
